@@ -9,7 +9,7 @@ class Paper
 	}
 		this.x=x;
 		this.y=y;
-		this.body=Bodies.rectangle(this.x, this.y, options)
+		this.body=Bodies.rectangle(this.x, this.y,50,50,options)
 		World.add(world, this.body);
 
 		this.image = loadImage("paper.png");
@@ -17,13 +17,13 @@ class Paper
 	}
 	display()
 	{
-			var paperpos=this.body.position;		
+		
+		var paperpos=this.body.position;		
 			push()
 			translate(paperpos.x, paperpos.y);
-			rectMode(CENTER)
-			strokeWeight(4);
-			stroke("black");
-			fill("darkblue");
+			imageMode(CENTER)
+			image(this.image,0,0,50,50);
+			
 			pop();
 	}
 }
